@@ -45,6 +45,14 @@ def index():
         indexPage = open(assetsDir + '/' + 'index.html').read()
     return indexPage
 
+@app.route('/about')
+def about():
+    return serveFile("about.html")
+
+@app.route('/info')
+def info():
+    return serveFile("info.html")
+
 @app.route('/<name>')
 def serveFile(name):
     if staticLoad and name not in staticAssets.keys():
@@ -81,5 +89,8 @@ def predictImage():
     x = np.expand_dims(x,axis=0)
     y = np.argmax(model.predict(x),axis=1)
     index = ['Left Bundle Branch Block', 'Normal', 'Premature Atrial Contraction', 'Premature Ventricular Contractions', 'Right Bundle Branch Block','Ventricular Fibrillation']
-    print(index[y[0]])
     return index[y[0]]
+
+
+if __name__ == "__main__":
+    app.run(debug = False)

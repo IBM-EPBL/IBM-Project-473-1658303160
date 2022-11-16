@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <style>
+
+        .bg {
+            background-repeat: repeat;
+        }
+
+        img {
+            display: block;
+            position: relative;
+            height: 100%;
+            width: 25%;
+            padding: 0%;
+        }
+
+        h1{
+        font-size:60px;
+        text-align:center;
+        color:white;
+        font-style:italic;
+        font-weight:bolder;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0%;
+        }
+
+        .super-flex {
+            height: 82%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        </style>
+        <title>
+            Arrythmia predictor
+        </title>
+    </head>
+    <body>
+        <ul>
+            <li><a href="about">About</a></li>
+            <li><a href="info">Info</a></li>
+            <li><a href="/">Home</a></li>
+        </ul>
+        <div class="bg">
+            <h1>
+                ECG
+            </h1>
+            <div class="super-flex">
+                <div class="flex-container">
+                    <img src="normal.png" title="normal">
+                    <img src="vf.png" title="vf">
+                    <img src="pac.png" title="pac">
+                </div>
+                <div class="flex-container">
+                    <img src="pvc.png" title="pvc">
+                    <img src="rbbb.png" title="rbbb">
+                    <img src="lbbb.png" title="lbbb">
+                </div>
+            </div>
+        </div>
+</body>
+</html>

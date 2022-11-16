@@ -1,8 +1,8 @@
 let fileLoader = document.getElementById("upload");
 let imagePreview = document.getElementById("preview");
 let outputText = document.getElementById("outputText");
+let loaderGif = document.getElementById("loader");
 fileLoader.addEventListener("change", fileSelector);
-
 
 function uploadFile(fileBuf) {
     let req = new XMLHttpRequest();
@@ -10,6 +10,8 @@ function uploadFile(fileBuf) {
 
     req.onreadystatechange = () => {
         if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+            loaderGif.style.display = "none";
+            outputText.style.display = "block";
             if (req.responseText != "Incorrect format") {
                 outputText.innerHTML = "I think this is <b>" + req.responseText + "</b>";
             }
@@ -20,6 +22,8 @@ function uploadFile(fileBuf) {
       }
 
     req.send(fileBuf);
+    loaderGif.style.display = "block";
+    outputText.style.display = "none";
 }
 
 
